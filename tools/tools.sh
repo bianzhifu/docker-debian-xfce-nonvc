@@ -5,7 +5,7 @@ set -u
 echo "Install common tools"
 apt-get update
 # python3-numpy used for websockify/novnc
-apt-get install -y vim wget net-tools locales bzip2 python3-numpy
+apt-get install -y vim wget net-tools locales bzip2 procps python3-numpy
 apt-get clean -y
 
 echo "generate locales für en_US.UTF-8"
