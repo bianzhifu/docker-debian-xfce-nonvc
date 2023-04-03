@@ -1,4 +1,4 @@
-name: build and push docker-debian-xfce-nonvc
+name: docker-debian-xfce-nonvc
 on:
   workflow_dispatch:
 jobs:

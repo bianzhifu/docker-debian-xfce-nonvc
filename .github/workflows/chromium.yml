@@ -1,4 +1,4 @@
-name: build and push docker-debian-xfce-nonvc-chromium
+name: chromium
 on:
   workflow_dispatch:
 jobs:
