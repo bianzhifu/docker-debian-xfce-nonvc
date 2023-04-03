@@ -15,10 +15,12 @@ ENV DEBIAN_FRONTEND=noninteractive \
 
 EXPOSE $VNC_PORT $NO_VNC_PORT
 
-RUN wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
-RUN echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
 RUN apt-get update && \
-    apt-get install -y google-chrome-stable && \
+    apt-get install fonts-liberation libu2f-udev xdg-utils -y && \
     apt-get clean -y
+
+RUN wget -qO- https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /google-chrome-stable_current_amd64.deb
+RUN dpkg -i /google-chrome-stable_current_amd64.deb
+RUN rm -f /google-chrome-stable_current_amd64.deb
 
 ENTRYPOINT ["/entrypoint.sh"]
