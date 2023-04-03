@@ -1,4 +1,4 @@
-FROM debian:11
+FROM debian:bullseye
 
 LABEL description="Debian Xfce4 desktop environment." \
     author="bianzhifu, <bianzhifu@foxmail.com>"
