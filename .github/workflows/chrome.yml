@@ -11,7 +11,7 @@ jobs:
       uses: ilteoood/docker_buildx@master
       with:
         tag: latest,bullseye
-        imageName: bianzhifu/docker-debian-xfce-nonvc-chromium
+        imageName: bianzhifu/docker-debian-xfce-nonvc-chrome
         dockerFile: chrome/Dockerfile
         platform: linux/amd64
         publish: true
