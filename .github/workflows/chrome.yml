@@ -1,0 +1,19 @@
+name: build and push docker-debian-xfce-nonvc-chrome
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@master 
+    - name: Customizable Docker Buildx
+      uses: ilteoood/docker_buildx@master
+      with:
+        tag: latest,bullseye
+        imageName: bianzhifu/docker-debian-xfce-nonvc-chromium
+        dockerFile: chrome/Dockerfile
+        platform: linux/amd64
+        publish: true
+        dockerUser: ${{ secrets.DOCKER_USERNAME }}
+        dockerPassword: ${{ secrets.DOCKER_PASSWORD }}
